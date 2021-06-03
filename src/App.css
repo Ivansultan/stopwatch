@@ -1,48 +1,31 @@
-.App {
-  background-color: #0099cc;
-  margin: 0 auto;
-  width: 300px;
-  border-radius: 10px;
-  border: 2px solid black;
-}
 
-.screen {
+.container {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200px;
 }
 
-.hours {
-  width: 35px;
-  background-color: white;
-  text-align: end;
-}
-
-.minutes {
-  width: 35px;
-  background-color: white;
-  text-align: end;
-}
-
-.seconds {
-  width: 35px;
-  background-color: white;
-  text-align: center;
+.value {
+  font-size: 75px;
 }
 
 .buttons {
-  background-color: aquamarine;
   display: flex;
-  justify-content: space-around;
-  width: 150px;
-  margin: 0 auto;
+  width: 300px;
+  justify-content: space-between;
 }
 
 .button {
-  outline: none;
-  background: gray;
-  border: 1px solid red;
+  background: lightgray;
+  border: 1px solid gray;
   padding: 5px 10px;
   border-radius: 7px;
-  
+  font-size: 30px;
+}
+
+.button:hover {
+  background: lightyellow;
+  cursor: pointer;
 }

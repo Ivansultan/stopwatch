@@ -3,7 +3,9 @@ import { fromEvent } from "rxjs";
 import { map, buffer, filter, debounceTime } from "rxjs/operators";
 import "./App.css";
 
-function App() {
+type Props = {};
+
+const App: React.FC<Props> = () => {
   const [count, setCount] = useState(0);
   const [start, setStart] = useState(false);
   const [wait, setWait] = useState(false);
@@ -43,31 +45,25 @@ function App() {
     setCount(0);
   };
 
-  const getSeconds = `0${count % 60}`.slice(-2);
+  const seconds = `0${count % 60}`.slice(-2);
   const minutes: any = `${Math.floor(count / 60)}`;
   const getMinutes = `0${minutes % 60}`.slice(-2);
-  const getHours = `0${Math.floor(count / 3600)}`.slice(-2);
+  const hours = `0${Math.floor(count / 3600)}`.slice(-2);
 
   return (
-    <div className="App">
-      <div className="screen">
-        <div className="hours">{getHours} :</div>
-        <div className="minutes">{getMinutes} :</div>
-        <div className="seconds">{getSeconds}</div>
+    <div className="container">
+      <div className="value">
+        {hours}:{getMinutes}:{seconds}
       </div>
       <div className="buttons">
-        <div className="button">
-          <button onClick={startAndStop}>{start ? "Stop" : "Start"}</button>
-        </div>
-        <div className="button">
-          <button>Wait</button>
-        </div>
-        <div className="button">
-          <button onClick={handleReset}>Reset</button>
-        </div>
+        <button className="button" onClick={startAndStop}>
+          {start ? "Stop" : "Start"}
+        </button>
+        <button className="button">Wait</button>
+        <button className="button" onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
-}
+};
 
 export default App;
