@@ -1,4 +1,6 @@
 # Stopwatch in format "HH : MM : SS"
+  Note:
+  button 'Wait' works only for double click
 
 Demo:  https://ivansultan.github.io/stopwatch/
 
